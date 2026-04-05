@@ -68,7 +68,7 @@ digs/
 
 - **Status** — `active` (you're on it now), `simmering` (back burner, keeping an eye out), or `closed` (resolved or abandoned). Default: `active`.
 - **Opened** — date you started the dig. Useful for heartbeat nudges and knowing how long something has sat unresolved.
-- **Tags** — 2–4 domains. Same convention as Pages: short, personal, searchable.
+- **Tags** — 2–4 domains: short, personal, searchable.
 - **Connected** — other digs this thread touches. Rabbit holes connect. Maintain both directions: if A links to B, B links to A.
 - **Open questions** — the questions you haven't answered yet. First-class. Update this list as you learn — cross out answered ones with `~~` rather than deleting, so you can see how the inquiry evolved.
 - **Findings** — dated log entries. Not a dump of sources. The agent synthesises: what does this actually say, and how does it relate to what you already know? Flag contradictions explicitly.
@@ -168,7 +168,7 @@ Pick a random active dig. Surface it:
 - "Your *[question]* dig hasn't had a new finding in 6 weeks — still active, or move to simmering?"
 - "You have 4 active digs right now. Anything to close or downgrade to simmering?"
 
-If a dig has been `active` for 90+ days with no findings logged in the last 30, nudge: "This might be a good time to close or shelve *[question]*."
+If a dig has been `active` for 20+ days with no findings logged in the last 10, nudge: "This might be a good time to close or shelve *[question]*."
 
 If nothing worth mentioning, skip.
 
