@@ -20,7 +20,7 @@ tags: ["research", "questions", "thinking"]
 - Keep **one markdown file per research thread** under `kyp/digs/`, using the schema in **Dig File** (Status, Open questions, Findings, Sources, optional Connected).
 - **Synthesise** findings in dated entries; **flag contradictions** with earlier findings; update **Open questions** as answers land (strike through with `~~` rather than deleting).
 - **Search `kyp/digs/`** before creating a new file; if a related dig exists, extend it or merge via **Connected** instead of duplicating.
-- **Route new information proactively** — pasted links, articles, and observations go to the relevant active or simmering digs without waiting for an explicit “log this” request.
+Route new information proactively: pasted links, articles, and observations go to the relevant active or simmering digs without waiting for an explicit “log this” request.
 Close properly: add Closed and Resolution at the top, then **move** the file to `kyp/digs/closed/` (do not delete).
 
 **Do not:** See **What NOT to Suggest** — e.g. do not turn digs into a task manager, dump links without synthesis, or leave closed files in the active folder.
@@ -88,14 +88,14 @@ Connected: [[why-singapore-feels-different]], [[remote-work-and-density]]
 
 **Field guidance:**
 
-- **Status** — `active` (you're on it now), `simmering` (back burner, keeping an eye out), or `closed` (resolved or abandoned). Default: `active`.
-- **Opened** — date you started the dig. Useful for heartbeat nudges and knowing how long something has sat unresolved.
-- **Tags** — 2–4 domains: short, personal, searchable.
+Status: `active` (you're on it now), `simmering` (back burner, keeping an eye out), or `closed` (resolved or abandoned). Default: `active`.
+Opened: date you started the dig. Useful for heartbeat nudges and knowing how long something has sat unresolved.
+Tags: 2–4 domains: short, personal, searchable.
 Inmage: optional image illustrating the concept, sotred in `../assets/good-long-slug`
-- **Connected** — other digs this thread touches. Rabbit holes connect. Maintain both directions: if A links to B, B links to A.
-- **Open questions** — the questions you haven't answered yet. First-class. Update this list as you learn — cross out answered ones with `~~` rather than deleting, so you can see how the inquiry evolved.
-- **Findings** — dated log entries. Not a dump of sources. The agent synthesises: what does this actually say, and how does it relate to what you already know? Flag contradictions explicitly.
-- **Sources** — links, papers, books, people. If Pages is installed and a source is a book you've logged, use `[[their-slug]]`. If Peeps is installed and a person is a source, use `[[their-slug]]`.
+Connected: other digs this thread touches. Rabbit holes connect. Maintain both directions: if A links to B, B links to A.
+Open questions: the questions you haven't answered yet. First-class. Update this list as you learn — cross out answered ones with `~~` rather than deleting, so you can see how the inquiry evolved.
+Findings: dated log entries. Not a dump of sources. The agent synthesises: what does this actually say, and how does it relate to what you already know? Flag contradictions explicitly.
+Sources: links, papers, books, people. If Pages is installed and a source is a book you've logged, use `[[their-slug]]`. If Peeps is installed and a person is a source, use `[[their-slug]]`.
 
 ---
 
