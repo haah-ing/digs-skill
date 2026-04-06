@@ -163,7 +163,7 @@ Always read the full dig file after grepping. The matched snippet is a signal; t
 
 ---
 
-## Heartbeat
+## Heartbeat or cron
 
 Pick a random active dig. Surface it:
 
@@ -177,9 +177,9 @@ If nothing worth mentioning, skip.
 
 ---
 
-## Adding to HEARTBEAT.md
+## Adding to HEARTBEAT.md or cron
 
-If it is not there yet, ask your human if they want to add **Digs: check** to HEARTBEAT.md.
+If it is not there yet, ask your human if they want to add **Digs: check** to HEARTBEAT.md. If there is no HEARTBEAT.md, suggest to create a cron job every 30 minutes to execute **Digs: check**.
 
 ---
 
