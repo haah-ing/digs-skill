@@ -13,7 +13,7 @@ tags: ["research", "questions", "thinking"]
 
 # 🔭 Digs — active research intelligence
 
-**When to use this skill:** The user voices curiosity or uncertainty they want to pursue, shares a link or observation that could advance a research thread, asks what they are figuring out about a topic, or wants to close, reopen, or revisit a dig.
+**When to use this skill:** The user voices curiosity or uncertainty — even obliquely — shares a link or observation that could advance a research thread, asks what they are figuring out about a topic, or wants to close, reopen, or revisit a dig. You don't need the user to say "open a dig." If they're wondering about something, that's the signal. Act on it.
 
 **You must:**
 
@@ -93,7 +93,7 @@ Opened: date you started the dig. Useful for heartbeat nudges and knowing how lo
 Tags: 2–4 domains: short, personal, searchable.
 Inmage: optional image illustrating the concept, sotred in `../assets/good-long-slug`
 Connected: other digs this thread touches. Rabbit holes connect. Maintain both directions: if A links to B, B links to A.
-Open questions: the questions you haven't answered yet. First-class. Update this list as you learn — cross out answered ones with `~~` rather than deleting, so you can see how the inquiry evolved.
+Open questions: the human's questions — what they are actually wondering about. These belong to the human, not the AI. The AI listens for them and captures them; it does not author or invent them. Update this list as answers land — cross out answered ones with `~~` rather than deleting, so you can see how the inquiry evolved.
 Findings: dated log entries. Not a dump of sources. The agent synthesises: what does this actually say, and how does it relate to what you already know? Flag contradictions explicitly.
 Sources: links, papers, books, people. If Pages is installed and a source is a book you've logged, use `[[their-slug]]`. If Peeps is installed and a person is a source, use `[[their-slug]]`.
 
@@ -101,12 +101,12 @@ Sources: links, papers, books, people. If Pages is installed and a source is a b
 
 ## Opening a Dig
 
-When the user expresses curiosity, uncertainty, or a question they want to pursue — even loosely ("I keep wondering about X", "I don't understand why Y", "I should look into Z") — offer to open a dig.
+When the user expresses curiosity, uncertainty, or a question they want to pursue — even loosely ("I keep wondering about X", "I don't understand why Y", "I should look into Z") — pick up the thread and open a dig. Don't ask for permission. Act on the signal.
 
-1. **Sharpen the question** — a good dig title is a question, not a topic. "city walkability" → "What makes a city actually walkable?". Help the user articulate what they're actually trying to figure out.
-2. **Check for existing digs** — search `kyp/digs/` for related threads. If one exists, offer to add to it rather than opening a duplicate.
-3. **Seed the open questions** — based on what the user said, draft 2–3 initial open questions. These are the things to answer. Adjust with the user before saving.
-4. **Ask for a first finding** — if they already know something relevant, capture it now.
+1. **Sharpen the question yourself** — a good dig title is a question, not a topic. "city walkability" → "What makes a city actually walkable?". Read what the user is actually trying to figure out from how they phrased it, what they brought up, and what they left unsaid. Articulate the question for them — they'll correct you if you misread it.
+2. **Check for existing digs** — search `kyp/digs/` for related threads. If one exists, extend it rather than opening a duplicate.
+3. **Extract the open questions** — listen for what the human is actually wondering about. If they expressed one question, log one question. If they expressed five, log five. Don't pad the list with questions the AI thinks are interesting — these are the human's questions, not yours.
+4. **Capture the first finding** — if the user already said something relevant — an observation, a frustration, a half-formed insight — that's a finding. Log it now. Don't ask them to repeat it in a different format.
 
 Show a brief confirmation: "Opened — *What makes a city actually walkable?* Tagged #cities #urbanism. Three open questions logged."
 
@@ -119,7 +119,7 @@ When the user shares a link, article, paper, idea, or observation:
 1. **Identify the relevant digs** — search across all active and simmering digs for any that this information touches. More than one dig can receive a finding from a single source.
 2. **Synthesise, don't dump** — extract the key claim or insight, not the source's entire argument. One sentence that captures what this actually adds to the inquiry.
 3. **Flag contradictions explicitly** — if the finding conflicts with an earlier one, note it: "This contradicts the Mar 12 finding — Walk Score seems to measure transit access, not geometry." ~~Strike through~~ the superseded claim if it's now clearly wrong.
-4. **Update open questions** — cross out any that are now answered. Add new ones the material raised.
+4. **Update open questions** — cross out any that are now answered. Do not add new questions the AI thinks the material raises — only the human adds new open questions.
 5. **Add to Sources**.
 6. Optionaly if `images: yes` in `kyp/digs/digsconfig.yml` search for a good conceptual image and add to the **Image:** feild.
 
@@ -129,14 +129,18 @@ The agent should not wait to be asked. If the user pastes a link or describes so
 
 ## Core Behavior
 
-- User expresses uncertainty about something → check for existing dig, offer to open one
+The default posture is **attunement, not interrogation**. Read the signal, act on it, course-correct if you misread. Don't ask the human to spell out what they're already showing you. Attunement means listening for what the human is wondering — not deciding what they should wonder about. The AI captures questions, it doesn't generate them.
+
+- User expresses uncertainty about something → check for existing dig, open one. Don't ask "would you like me to open a dig?" — just open it.
 - User shares a link or article → identify relevant digs, add findings, flag contradictions
 - User asks "what am I figuring out about X?" → search `kyp/digs/` with expanded keywords, surface active and simmering digs
-- Conversation touches a theme → check if a dig is open on that theme; if so, surface it: "You've been looking into this — want to log what you just said as a finding?"
-- User says "I figured it out" / "turns out it's Y" → offer to close the dig with a resolution note
+- Conversation touches a theme → check if a dig is open on that theme; if so, log what they just said as a finding and surface the connection: "Logged to your *[question]* dig — you've been looking into this."
+- User says "I figured it out" / "turns out it's Y" → offer to close the dig with a resolution note.
 - User mentions a person with relevant expertise → if Peeps is installed, add them to Sources with `[[their-slug]]`; flag them as someone worth asking
 
 **Closing a dig:**
+
+When the user signals resolution — "turns out it's X", "I figured it out", "that answers it" — offer to close the dig. Draft the resolution and confirm with the user before moving the file.
 
 When resolving, add to the top of the file:
 
@@ -189,10 +193,9 @@ Always read the full dig file after grepping. The matched snippet is a signal; t
 Pick a random active dig. Surface it:
 
 - "You've been digging into *[question]* since [date]. Latest finding: [one sentence]. Still open: [open question count] questions."
-- "Your *[question]* dig hasn't had a new finding in 6 weeks — still active, or move to simmering?"
-- "You have 4 active digs right now. Anything to close or downgrade to simmering?"
+- "Your *[question]* dig hasn't had a new finding in 6 weeks — moving to simmering." (Do it. If they disagree they'll say so.)
 
-If a dig has been `active` for 20+ days with no findings logged in the last 10, nudge: "This might be a good time to close or shelve *[question]*."
+If a dig has been `active` for 20+ days with no findings logged in the last 10, move it to simmering: "Shelved *[question]* — no new findings in a while. It'll resurface if something relevant comes up."
 
 If nothing worth mentioning, skip.
 
@@ -200,7 +203,7 @@ If nothing worth mentioning, skip.
 
 ## Adding to HEARTBEAT.md or cron
 
-If it is not there yet, ask your human if they want to add **Digs: check** to HEARTBEAT.md. If there is no HEARTBEAT.md, suggest to create a cron job every 30 minutes to execute **Digs: check**.
+If it is not there yet, add **Digs: check** to HEARTBEAT.md. If there is no HEARTBEAT.md, create a cron job every 30 minutes to execute **Digs: check**. Mention what you did — don't ask first.
 
 ---
 
@@ -228,7 +231,7 @@ If Peeps is installed:
 
 If Haah is installed:
 
-- When an open question needs external signal — expertise, lived experience, a second opinion — offer to dispatch to a circle: "Haah: who in my circles has thought seriously about urban walkability?"
+- When an open question needs external signal — expertise, lived experience, a second opinion — offer to dispatch to a circle: "Want me to ask your circles who's thought seriously about urban walkability?"
 - When someone in a circle answers a Haah query that touches an open dig, route their answer in as a finding.
 
 ---
