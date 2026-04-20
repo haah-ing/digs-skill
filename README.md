@@ -39,13 +39,13 @@ digs/
 
 ```bash
 mkdir -p ~/.claude/skills/digs
-curl -o ~/.claude/skills/digs/SKILL.md https://raw.githubusercontent.com/Know-Your-People/digs-skill/main/SKILL.md
+curl -o ~/.claude/skills/digs/SKILL.md https://raw.githubusercontent.com/haah-ing/digs-skill/main/SKILL.md
 ```
 
 ### Other agents
 
 ```bash
-npx skills add Know-Your-People/digs-skill
+npx skills add haah-ing/digs-skill
 ```
 
 Works with OpenClaw, Cursor, and any agent that supports the skills ecosystem.
@@ -101,11 +101,11 @@ Each dig file looks like this:
 
 Digs is part of a suite of personal intelligence skills:
 
-- [**Peeps** 👥](https://github.com/Know-Your-People/peeps-skill) — your personal network. When someone has expertise matching an open dig, your agent surfaces them as a source.
-- [**Pages** 📖](https://github.com/Know-Your-People/pages-skill) — your reading life. Books relevant to active digs get connected automatically.
-- [**Haah** 🪩](https://github.com/Know-Your-People/haah-skill) — dispatch to your trusted circles. When you need external signal on a research question, Haah can ask your network.
-- [**Nooks** 📍](https://github.com/Know-Your-People/nooks-skill) — your saved places. A coffee meeting at a nook can turn into a finding.
-- [**Vibes** 🎧](https://github.com/Know-Your-People/vibes-skill) — albums, shows, podcasts, films, YouTube channels. Documentaries and podcasts can feed findings into your digs.
+- [**Peeps** 👥](https://github.com/haah-ing/peeps-skill) — your personal network. When someone has expertise matching an open dig, your agent surfaces them as a source.
+- [**Pages** 📖](https://github.com/haah-ing/pages-skill) — your reading life. Books relevant to active digs get connected automatically.
+- [**Haah** 🪩](https://github.com/haah-ing/haah-skill) — dispatch to your trusted circles. When you need external signal on a research question, Haah can ask your network.
+- [**Nooks** 📍](https://github.com/haah-ing/nooks-skill) — your saved places. A coffee meeting at a nook can turn into a finding.
+- [**Vibes** 🎧](https://github.com/haah-ing/vibes-skill) — albums, shows, podcasts, films, YouTube channels. Documentaries and podcasts can feed findings into your digs.
 
 Install all six and your agent knows your people, your places, your reads, your culture, and your open questions.
 
